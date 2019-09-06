@@ -293,6 +293,14 @@
           y: touches.pageY - start.y
         };
 
+        if(options.rotation){
+          var t_y = delta.x;
+          delta.x = delta.y;
+          delta.y = t_y;
+        }
+
+        console.log("my rotation!!");
+
         // determine if scrolling test has run - one time test
         if (typeof isScrolling == 'undefined') {
           isScrolling = !!(
